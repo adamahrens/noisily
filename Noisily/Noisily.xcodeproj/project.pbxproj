@@ -11,7 +11,9 @@
 		43D3D6411AA77B6F00473DD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D3D63F1AA77B6F00473DD1 /* Main.storyboard */; };
 		43D3D6431AA77B6F00473DD1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D3D6421AA77B6F00473DD1 /* Images.xcassets */; };
 		43D3D6461AA77B6F00473DD1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D3D6441AA77B6F00473DD1 /* LaunchScreen.xib */; };
-		43D3D6521AA77B6F00473DD1 /* NoisilyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3D6511AA77B6F00473DD1 /* NoisilyTests.swift */; };
+		43D3D65F1AA77F6400473DD1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3D65E1AA77F6400473DD1 /* UIColor+Extension.swift */; };
+		43D3D6611AA787A700473DD1 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3D6601AA787A700473DD1 /* UIColorExtensionTests.swift */; };
+		43D3D6621AA7880E00473DD1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3D65E1AA77F6400473DD1 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,8 @@
 		43D3D6451AA77B6F00473DD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		43D3D64B1AA77B6F00473DD1 /* NoisilyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoisilyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D3D6501AA77B6F00473DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43D3D6511AA77B6F00473DD1 /* NoisilyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoisilyTests.swift; sourceTree = "<group>"; };
+		43D3D65E1AA77F6400473DD1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "Extensions/UIColor+Extension.swift"; sourceTree = "<group>"; };
+		43D3D6601AA787A700473DD1 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,7 @@
 		43D3D6381AA77B6F00473DD1 /* Noisily */ = {
 			isa = PBXGroup;
 			children = (
+				43D3D65B1AA77ED000473DD1 /* Extensions */,
 				43D3D63B1AA77B6F00473DD1 /* AppDelegate.swift */,
 				43D3D63F1AA77B6F00473DD1 /* Main.storyboard */,
 				43D3D6421AA77B6F00473DD1 /* Images.xcassets */,
@@ -95,7 +99,7 @@
 		43D3D64E1AA77B6F00473DD1 /* NoisilyTests */ = {
 			isa = PBXGroup;
 			children = (
-				43D3D6511AA77B6F00473DD1 /* NoisilyTests.swift */,
+				43D3D6601AA787A700473DD1 /* UIColorExtensionTests.swift */,
 				43D3D64F1AA77B6F00473DD1 /* Supporting Files */,
 			);
 			path = NoisilyTests;
@@ -107,6 +111,14 @@
 				43D3D6501AA77B6F00473DD1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43D3D65B1AA77ED000473DD1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				43D3D65E1AA77F6400473DD1 /* UIColor+Extension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D3D63C1AA77B6F00473DD1 /* AppDelegate.swift in Sources */,
+				43D3D65F1AA77F6400473DD1 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43D3D6521AA77B6F00473DD1 /* NoisilyTests.swift in Sources */,
+				43D3D6621AA7880E00473DD1 /* UIColor+Extension.swift in Sources */,
+				43D3D6611AA787A700473DD1 /* UIColorExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
