@@ -14,6 +14,8 @@
 		43D3D65F1AA77F6400473DD1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3D65E1AA77F6400473DD1 /* UIColor+Extension.swift */; };
 		43D3D6611AA787A700473DD1 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3D6601AA787A700473DD1 /* UIColorExtensionTests.swift */; };
 		43D3D6621AA7880E00473DD1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3D65E1AA77F6400473DD1 /* UIColor+Extension.swift */; };
+		43D3D6651AA798D100473DD1 /* NoiseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3D6641AA798D100473DD1 /* NoiseSelectionViewController.swift */; };
+		43D3D6681AA7991800473DD1 /* BackgroundColorRandomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3D6671AA7991800473DD1 /* BackgroundColorRandomizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		43D3D6501AA77B6F00473DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D3D65E1AA77F6400473DD1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "Extensions/UIColor+Extension.swift"; sourceTree = "<group>"; };
 		43D3D6601AA787A700473DD1 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
+		43D3D6641AA798D100473DD1 /* NoiseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseSelectionViewController.swift; path = ViewControllers/NoiseSelectionViewController.swift; sourceTree = "<group>"; };
+		43D3D6671AA7991800473DD1 /* BackgroundColorRandomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundColorRandomizer.swift; path = Models/BackgroundColorRandomizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 		43D3D6381AA77B6F00473DD1 /* Noisily */ = {
 			isa = PBXGroup;
 			children = (
+				43D3D6661AA798F300473DD1 /* Models */,
+				43D3D6631AA798B900473DD1 /* ViewControllers */,
 				43D3D65B1AA77ED000473DD1 /* Extensions */,
 				43D3D63B1AA77B6F00473DD1 /* AppDelegate.swift */,
 				43D3D63F1AA77B6F00473DD1 /* Main.storyboard */,
@@ -119,6 +125,22 @@
 				43D3D65E1AA77F6400473DD1 /* UIColor+Extension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		43D3D6631AA798B900473DD1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				43D3D6641AA798D100473DD1 /* NoiseSelectionViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		43D3D6661AA798F300473DD1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				43D3D6671AA7991800473DD1 /* BackgroundColorRandomizer.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +243,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D3D6681AA7991800473DD1 /* BackgroundColorRandomizer.swift in Sources */,
+				43D3D6651AA798D100473DD1 /* NoiseSelectionViewController.swift in Sources */,
 				43D3D63C1AA77B6F00473DD1 /* AppDelegate.swift in Sources */,
 				43D3D65F1AA77F6400473DD1 /* UIColor+Extension.swift in Sources */,
 			);
