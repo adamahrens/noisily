@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoiseSelectionViewController: UIViewController {
+class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     private let backgroundRandomizer = BackgroundColorRandomizer()
     private var timer : NSTimer? = nil
     
@@ -26,5 +26,18 @@ class NoiseSelectionViewController: UIViewController {
         animation.duration = 10
         self.view.layer.addAnimation(animation, forKey: "fadeAnimation")
         self.view.backgroundColor = newBackgroundColor
+    }
+    
+    //MARK: UICollectionViewDatasource
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCellWithReuseIdentifier("NoiseCollectionViewCell", forIndexPath: indexPath) as NoiseCollectionViewCell
     }
 }
