@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4380F9841AAF826000BBAC40 /* waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97D1AAF826000BBAC40 /* waves.mp4 */; };
+		4380F9851AAF826000BBAC40 /* thunder.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97E1AAF826000BBAC40 /* thunder.mp4 */; };
+		4380F9861AAF826000BBAC40 /* birds.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97F1AAF826000BBAC40 /* birds.mp4 */; };
+		4380F9871AAF826000BBAC40 /* coffee-shop.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9801AAF826000BBAC40 /* coffee-shop.mp4 */; };
+		4380F9881AAF826000BBAC40 /* fire.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9811AAF826000BBAC40 /* fire.mp4 */; };
+		4380F9891AAF826000BBAC40 /* rain.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9821AAF826000BBAC40 /* rain.mp4 */; };
+		4380F98A1AAF826000BBAC40 /* lunch-crowd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9831AAF826000BBAC40 /* lunch-crowd.mp3 */; };
 		43D3D63C1AA77B6F00473DD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3D63B1AA77B6F00473DD1 /* AppDelegate.swift */; };
 		43D3D6411AA77B6F00473DD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D3D63F1AA77B6F00473DD1 /* Main.storyboard */; };
 		43D3D6431AA77B6F00473DD1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D3D6421AA77B6F00473DD1 /* Images.xcassets */; };
@@ -30,6 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4380F97D1AAF826000BBAC40 /* waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = waves.mp4; sourceTree = "<group>"; };
+		4380F97E1AAF826000BBAC40 /* thunder.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = thunder.mp4; sourceTree = "<group>"; };
+		4380F97F1AAF826000BBAC40 /* birds.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = birds.mp4; sourceTree = "<group>"; };
+		4380F9801AAF826000BBAC40 /* coffee-shop.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coffee-shop.mp4"; sourceTree = "<group>"; };
+		4380F9811AAF826000BBAC40 /* fire.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fire.mp4; sourceTree = "<group>"; };
+		4380F9821AAF826000BBAC40 /* rain.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain.mp4; sourceTree = "<group>"; };
+		4380F9831AAF826000BBAC40 /* lunch-crowd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "lunch-crowd.mp3"; sourceTree = "<group>"; };
 		43D3D6361AA77B6F00473DD1 /* Noisily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noisily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D3D63A1AA77B6F00473DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D3D63B1AA77B6F00473DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +77,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4380F97C1AAF823F00BBAC40 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4380F97D1AAF826000BBAC40 /* waves.mp4 */,
+				4380F97E1AAF826000BBAC40 /* thunder.mp4 */,
+				4380F97F1AAF826000BBAC40 /* birds.mp4 */,
+				4380F9801AAF826000BBAC40 /* coffee-shop.mp4 */,
+				4380F9811AAF826000BBAC40 /* fire.mp4 */,
+				4380F9821AAF826000BBAC40 /* rain.mp4 */,
+				4380F9831AAF826000BBAC40 /* lunch-crowd.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		43D3D62D1AA77B6F00473DD1 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +112,7 @@
 		43D3D6381AA77B6F00473DD1 /* Noisily */ = {
 			isa = PBXGroup;
 			children = (
+				4380F97C1AAF823F00BBAC40 /* Sounds */,
 				43D3D6691AA7C20400473DD1 /* CollectionViewCell */,
 				43D3D6661AA798F300473DD1 /* Models */,
 				43D3D6631AA798B900473DD1 /* ViewControllers */,
@@ -234,9 +263,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4380F9851AAF826000BBAC40 /* thunder.mp4 in Resources */,
 				43D3D6411AA77B6F00473DD1 /* Main.storyboard in Resources */,
+				4380F9861AAF826000BBAC40 /* birds.mp4 in Resources */,
 				43D3D6461AA77B6F00473DD1 /* LaunchScreen.xib in Resources */,
+				4380F9841AAF826000BBAC40 /* waves.mp4 in Resources */,
+				4380F9881AAF826000BBAC40 /* fire.mp4 in Resources */,
+				4380F9871AAF826000BBAC40 /* coffee-shop.mp4 in Resources */,
+				4380F9891AAF826000BBAC40 /* rain.mp4 in Resources */,
 				43D3D6431AA77B6F00473DD1 /* Images.xcassets in Resources */,
+				4380F98A1AAF826000BBAC40 /* lunch-crowd.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +487,7 @@
 				43D3D6571AA77B6F00473DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43D3D6581AA77B6F00473DD1 /* Build configuration list for PBXNativeTarget "NoisilyTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +496,7 @@
 				43D3D65A1AA77B6F00473DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
