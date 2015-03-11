@@ -9,5 +9,5 @@
 import UIKit
 
 class NoiseCollectionViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var imageView: UIImageView!
 }

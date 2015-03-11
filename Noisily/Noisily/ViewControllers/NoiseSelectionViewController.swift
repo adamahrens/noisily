@@ -11,6 +11,7 @@ import UIKit
 class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     private let backgroundRandomizer = BackgroundColorRandomizer()
     private var timer : NSTimer? = nil
+    private let noises = Noise.allObjects()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,9 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCellWithReuseIdentifier("NoiseCollectionViewCell", forIndexPath: indexPath) as NoiseCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("NoiseCollectionViewCell", forIndexPath: indexPath) as NoiseCollectionViewCell
+        let noise = noises.firstObject() as Noise
+        cell.imageView.image = UIImage(named: noise.imageName)
+        return cell
     }
 }

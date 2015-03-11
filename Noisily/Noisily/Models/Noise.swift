@@ -10,5 +10,12 @@ import UIKit
 import Realm
 
 class Noise: RLMObject {
-   
+    dynamic var name = ""
+    dynamic var imageName = ""
+    dynamic var fileName = ""
+    dynamic var fileType = ""
+    
+    func soundFilePath() -> NSURL {
+        return NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(fileName, ofType: fileType)!)!
+    }
 }
