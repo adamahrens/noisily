@@ -14,6 +14,10 @@
 		4380F9881AAF826000BBAC40 /* fire.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9811AAF826000BBAC40 /* fire.mp4 */; };
 		4380F9891AAF826000BBAC40 /* rain.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9821AAF826000BBAC40 /* rain.mp4 */; };
 		4380F98A1AAF826000BBAC40 /* lunch-crowd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9831AAF826000BBAC40 /* lunch-crowd.mp3 */; };
+		43C23ACD1AB07C9A004DA244 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C23ACC1AB07C9A004DA244 /* Realm.framework */; };
+		43C23ACF1AB07CAC004DA244 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C23ACE1AB07CAC004DA244 /* libc++.dylib */; };
+		43C23AD11AB07CC3004DA244 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C23AD01AB07CC3004DA244 /* RLMSupport.swift */; };
+		43C23AD31AB07D17004DA244 /* Noise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C23AD21AB07D17004DA244 /* Noise.swift */; };
 		43D3D63C1AA77B6F00473DD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D3D63B1AA77B6F00473DD1 /* AppDelegate.swift */; };
 		43D3D6411AA77B6F00473DD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D3D63F1AA77B6F00473DD1 /* Main.storyboard */; };
 		43D3D6431AA77B6F00473DD1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D3D6421AA77B6F00473DD1 /* Images.xcassets */; };
@@ -44,6 +48,10 @@
 		4380F9811AAF826000BBAC40 /* fire.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fire.mp4; sourceTree = "<group>"; };
 		4380F9821AAF826000BBAC40 /* rain.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain.mp4; sourceTree = "<group>"; };
 		4380F9831AAF826000BBAC40 /* lunch-crowd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "lunch-crowd.mp3"; sourceTree = "<group>"; };
+		43C23ACC1AB07C9A004DA244 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Realm.framework; sourceTree = "<group>"; };
+		43C23ACE1AB07CAC004DA244 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		43C23AD01AB07CC3004DA244 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMSupport.swift; path = ../RLMSupport.swift; sourceTree = "<group>"; };
+		43C23AD21AB07D17004DA244 /* Noise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Noise.swift; path = Models/Noise.swift; sourceTree = "<group>"; };
 		43D3D6361AA77B6F00473DD1 /* Noisily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noisily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D3D63A1AA77B6F00473DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D3D63B1AA77B6F00473DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43C23ACF1AB07CAC004DA244 /* libc++.dylib in Frameworks */,
+				43C23ACD1AB07C9A004DA244 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +101,16 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
+		43C23AD41AB07D34004DA244 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				43C23AD01AB07CC3004DA244 /* RLMSupport.swift */,
+				43C23ACE1AB07CAC004DA244 /* libc++.dylib */,
+				43C23ACC1AB07C9A004DA244 /* Realm.framework */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
 		43D3D62D1AA77B6F00473DD1 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +132,7 @@
 		43D3D6381AA77B6F00473DD1 /* Noisily */ = {
 			isa = PBXGroup;
 			children = (
+				43C23AD41AB07D34004DA244 /* Vendor */,
 				4380F97C1AAF823F00BBAC40 /* Sounds */,
 				43D3D6691AA7C20400473DD1 /* CollectionViewCell */,
 				43D3D6661AA798F300473DD1 /* Models */,
@@ -171,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				43D3D6671AA7991800473DD1 /* BackgroundColorRandomizer.swift */,
+				43C23AD21AB07D17004DA244 /* Noise.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -291,6 +313,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D3D6681AA7991800473DD1 /* BackgroundColorRandomizer.swift in Sources */,
+				43C23AD31AB07D17004DA244 /* Noise.swift in Sources */,
+				43C23AD11AB07CC3004DA244 /* RLMSupport.swift in Sources */,
 				43D3D6651AA798D100473DD1 /* NoiseSelectionViewController.swift in Sources */,
 				43D3D66B1AA7C22400473DD1 /* NoiseCollectionViewCell.swift in Sources */,
 				43D3D63C1AA77B6F00473DD1 /* AppDelegate.swift in Sources */,
@@ -418,6 +442,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Noisily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,6 +456,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Noisily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
