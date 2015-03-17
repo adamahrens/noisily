@@ -35,12 +35,12 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return Int(noises.count)
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("NoiseCollectionViewCell", forIndexPath: indexPath) as NoiseCollectionViewCell
-        let noise = noises.firstObject() as Noise
+        let noise = noises[UInt(indexPath.row)] as Noise
         cell.imageView.image = UIImage(named: noise.imageName)
         return cell
     }
