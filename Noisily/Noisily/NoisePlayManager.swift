@@ -9,8 +9,7 @@
 import AVFoundation
 
 class NoisePlayerManager: NSObject, AVAudioPlayerDelegate {
-    
-    private var player: AVAudioPlayer?
+    private var players = [String : AVAudioPlayer]()
     
     /**
     Toggles playing the noise. If currently playing turns it off, otherwise on
@@ -18,13 +17,20 @@ class NoisePlayerManager: NSObject, AVAudioPlayerDelegate {
     func toggleNoise(noise: Noise) {
         let noiseResource = noise.soundFilePath()
         var error: NSError?
-        player = AVAudioPlayer(contentsOfURL: noiseResource, error: &error)
-        if let play = player {
-            play.volume = 0.5
-            play.numberOfLoops = -1
-            play.delegate = self
-            play.prepareToPlay()
-            play.play()
+        
+        // Already have a player going for the noise
+        if let player = players[noise.name] {
+            player.stop()
+            players[noise.name] = nil
+        } else {
+            // Need to start a new player
+            let player = AVAudioPlayer(contentsOfURL: noiseResource, error: &error)
+            player.volume = 0.5
+            player.numberOfLoops = -1
+            player.delegate = self
+            player.prepareToPlay()
+            player.play()
+            players[noise.name] = player
         }
         
         if (error != nil) {
