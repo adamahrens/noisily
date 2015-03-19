@@ -96,13 +96,22 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wdj-oK-u2U">
+                                                    <rect key="frame" x="6" y="269" width="292" height="31"/>
+                                                    <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </slider>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="wdj-oK-u2U" firstAttribute="leading" secondItem="OLr-Xs-RpN" secondAttribute="leading" constant="8" id="92h-Rj-Zon"/>
                                             <constraint firstAttribute="centerX" secondItem="jIZ-M9-Zeq" secondAttribute="centerX" id="E1a-Bq-6RO"/>
                                             <constraint firstItem="jIZ-M9-Zeq" firstAttribute="top" secondItem="OLr-Xs-RpN" secondAttribute="top" constant="8" id="Pcp-bR-lBV"/>
+                                            <constraint firstAttribute="trailing" secondItem="wdj-oK-u2U" secondAttribute="trailing" constant="8" id="cN8-tS-UwV"/>
+                                            <constraint firstAttribute="bottom" secondItem="wdj-oK-u2U" secondAttribute="bottom" constant="2" id="fu5-me-Vin"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="jIZ-M9-Zeq" id="Rid-22-BIU"/>

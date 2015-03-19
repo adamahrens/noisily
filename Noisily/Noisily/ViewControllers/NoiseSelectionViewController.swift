@@ -16,13 +16,26 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     private let noises = Noise.allObjects()
     
     private var timer : NSTimer? = nil
-    private var cellWidth = 120.0
-    private var cellHeight = 120.0
+    private var cellWidth = 0.0
+    private var cellHeight = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = backgroundRandomizer.randomBackgroundColor()
-        timer = NSTimer.scheduledTimerWithTimeInterval(70.0, target: self, selector: Selector("changeBackgroundColor"), userInfo: nil, repeats: true)
+        
+        // Configure the collectionViewCellSize
+        configureCellSizeForCurrentTraitCollection()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        timer = NSTimer.scheduledTimerWithTimeInterval(70.0, target: self, selector: "changeBackgroundColor", userInfo: nil, repeats: true)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        timer!.invalidate()
+        timer = nil
     }
     
     func changeBackgroundColor() {
@@ -58,20 +71,31 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
+        configureCellSizeForCurrentTraitCollection()
+    }
+    
+    //MARK: Private
+    private func configureCellSizeForCurrentTraitCollection() {
         // iPhone 4, 5, 6 in Landscape
         if self.traitCollection.horizontalSizeClass == .Compact && self.traitCollection.verticalSizeClass == .Compact {
             cellWidth = 120.0
-            cellHeight = 120.0
+            cellHeight = 130.0
         }
         
         // iPhone 6+ in Landscape
         if self.traitCollection.horizontalSizeClass == .Regular && self.traitCollection.verticalSizeClass == .Compact {
             cellWidth = 160.0
-            cellHeight = 160.0
+            cellHeight = 180.0
+        }
+        
+        // iPhone's in portrait
+        if self.traitCollection.horizontalSizeClass == .Compact && self.traitCollection.verticalSizeClass == .Regular {
+            cellWidth = 120.0
+            cellHeight = 150.0
         }
         
         // iPad Portrait or Landscape
-        // Check if pad. Could eventually have a phone that's Regular 
+        // Check if pad. Could eventually have a phone that's Regular
         // in Vertical & Horizontal size class
         if self.traitCollection.userInterfaceIdiom == .Pad &&  self.traitCollection.horizontalSizeClass == .Regular && self.traitCollection.verticalSizeClass == .Regular {
             cellWidth = 300.0
