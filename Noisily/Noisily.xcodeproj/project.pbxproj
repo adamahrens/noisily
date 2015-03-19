@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		43032C8F1ABB388800871A1C /* NoiseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43032C8E1ABB388800871A1C /* NoiseDataSource.swift */; };
+		43032C961ABB574F00871A1C /* SAMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 43032C931ABB574F00871A1C /* SAMath.m */; };
+		43032C971ABB574F00871A1C /* SAMultisectorControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 43032C951ABB574F00871A1C /* SAMultisectorControl.m */; };
+		43032C9C1ABB58AF00871A1C /* NoiseLayeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43032C9B1ABB58AF00871A1C /* NoiseLayeringViewController.swift */; };
 		4380F9841AAF826000BBAC40 /* waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97D1AAF826000BBAC40 /* waves.mp4 */; };
 		4380F9851AAF826000BBAC40 /* thunder.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97E1AAF826000BBAC40 /* thunder.mp4 */; };
 		4380F9861AAF826000BBAC40 /* birds.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97F1AAF826000BBAC40 /* birds.mp4 */; };
@@ -44,6 +47,12 @@
 
 /* Begin PBXFileReference section */
 		43032C8E1ABB388800871A1C /* NoiseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseDataSource.swift; path = Models/NoiseDataSource.swift; sourceTree = "<group>"; };
+		43032C911ABB574F00871A1C /* Noisily-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Noisily-Bridging-Header.h"; sourceTree = "<group>"; };
+		43032C921ABB574F00871A1C /* SAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMath.h; sourceTree = "<group>"; };
+		43032C931ABB574F00871A1C /* SAMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMath.m; sourceTree = "<group>"; };
+		43032C941ABB574F00871A1C /* SAMultisectorControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMultisectorControl.h; sourceTree = "<group>"; };
+		43032C951ABB574F00871A1C /* SAMultisectorControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMultisectorControl.m; sourceTree = "<group>"; };
+		43032C9B1ABB58AF00871A1C /* NoiseLayeringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseLayeringViewController.swift; path = ViewControllers/NoiseLayeringViewController.swift; sourceTree = "<group>"; };
 		4380F97D1AAF826000BBAC40 /* waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = waves.mp4; sourceTree = "<group>"; };
 		4380F97E1AAF826000BBAC40 /* thunder.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = thunder.mp4; sourceTree = "<group>"; };
 		4380F97F1AAF826000BBAC40 /* birds.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = birds.mp4; sourceTree = "<group>"; };
@@ -91,6 +100,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43032C901ABB573B00871A1C /* MultisectorControl */ = {
+			isa = PBXGroup;
+			children = (
+				43032C921ABB574F00871A1C /* SAMath.h */,
+				43032C931ABB574F00871A1C /* SAMath.m */,
+				43032C941ABB574F00871A1C /* SAMultisectorControl.h */,
+				43032C951ABB574F00871A1C /* SAMultisectorControl.m */,
+				43032C911ABB574F00871A1C /* Noisily-Bridging-Header.h */,
+			);
+			name = MultisectorControl;
+			sourceTree = "<group>";
+		};
 		4380F97C1AAF823F00BBAC40 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +129,7 @@
 		43C23AD41AB07D34004DA244 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				43032C901ABB573B00871A1C /* MultisectorControl */,
 				43C23AD01AB07CC3004DA244 /* RLMSupport.swift */,
 				43C23ACE1AB07CAC004DA244 /* libc++.dylib */,
 				43C23ACC1AB07C9A004DA244 /* Realm.framework */,
@@ -188,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				43D3D6641AA798D100473DD1 /* NoiseSelectionViewController.swift */,
+				43032C9B1ABB58AF00871A1C /* NoiseLayeringViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -318,15 +341,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43032C9C1ABB58AF00871A1C /* NoiseLayeringViewController.swift in Sources */,
 				4390A8001ABB09F900A63641 /* NoisePlayManager.swift in Sources */,
 				43D3D6681AA7991800473DD1 /* BackgroundColorRandomizer.swift in Sources */,
 				43032C8F1ABB388800871A1C /* NoiseDataSource.swift in Sources */,
 				43C23AD31AB07D17004DA244 /* Noise.swift in Sources */,
 				43C23AD11AB07CC3004DA244 /* RLMSupport.swift in Sources */,
+				43032C971ABB574F00871A1C /* SAMultisectorControl.m in Sources */,
 				43D3D6651AA798D100473DD1 /* NoiseSelectionViewController.swift in Sources */,
 				43D3D66B1AA7C22400473DD1 /* NoiseCollectionViewCell.swift in Sources */,
 				43D3D63C1AA77B6F00473DD1 /* AppDelegate.swift in Sources */,
 				43D3D65F1AA77F6400473DD1 /* UIColor+Extension.swift in Sources */,
+				43032C961ABB574F00871A1C /* SAMath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -457,6 +484,8 @@
 				INFOPLIST_FILE = Noisily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Noisily/Noisily-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -465,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -472,6 +502,7 @@
 				INFOPLIST_FILE = Noisily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Noisily/Noisily-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JZy-j1-P2Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q5F-yW-SG6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -139,7 +139,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLc-z0-OHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="114"/>
+            <point key="canvasLocation" x="126" y="108"/>
+        </scene>
+        <!--Noise Layering View Controller-->
+        <scene sceneID="ddY-n9-gsL">
+            <objects>
+                <viewController id="Q5F-yW-SG6" customClass="NoiseLayeringViewController" customModule="Noisily" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8ic-uT-mgK"/>
+                        <viewControllerLayoutGuide type="bottom" id="hG2-v7-ZGj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S0d-NB-glp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJW-MC-Xgo" customClass="SAMultisectorControl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YJW-MC-Xgo" secondAttribute="trailing" id="HjO-bD-Y4U"/>
+                            <constraint firstItem="YJW-MC-Xgo" firstAttribute="leading" secondItem="S0d-NB-glp" secondAttribute="leading" id="JrP-Cg-xA1"/>
+                            <constraint firstItem="hG2-v7-ZGj" firstAttribute="top" secondItem="YJW-MC-Xgo" secondAttribute="bottom" id="eqJ-Br-Nyx"/>
+                            <constraint firstItem="YJW-MC-Xgo" firstAttribute="top" secondItem="S0d-NB-glp" secondAttribute="top" id="iWt-qd-VeJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="multiSectorControl" destination="YJW-MC-Xgo" id="oPr-Y5-2LJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZs-ex-xY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="113"/>
         </scene>
     </scenes>
     <resources>
