@@ -14,6 +14,7 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     
     private let backgroundRandomizer = BackgroundColorRandomizer()
     private let noises = Noise.allObjects()
+    private let noiseManager = NoisePlayerManager()
     
     private var timer : NSTimer? = nil
     private var cellWidth = 0.0
@@ -72,6 +73,11 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
         super.traitCollectionDidChange(previousTraitCollection)
         
         configureCellSizeForCurrentTraitCollection()
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let selectedNoise = noises[UInt(indexPath.row)] as Noise
+        noiseManager.toggleNoise(selectedNoise)
     }
     
     //MARK: Private

@@ -14,6 +14,7 @@
 		4380F9881AAF826000BBAC40 /* fire.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9811AAF826000BBAC40 /* fire.mp4 */; };
 		4380F9891AAF826000BBAC40 /* rain.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9821AAF826000BBAC40 /* rain.mp4 */; };
 		4380F98A1AAF826000BBAC40 /* lunch-crowd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9831AAF826000BBAC40 /* lunch-crowd.mp3 */; };
+		4390A8001ABB09F900A63641 /* NoisePlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390A7FF1ABB09F900A63641 /* NoisePlayManager.swift */; };
 		43C23ACD1AB07C9A004DA244 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C23ACC1AB07C9A004DA244 /* Realm.framework */; };
 		43C23ACF1AB07CAC004DA244 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C23ACE1AB07CAC004DA244 /* libc++.dylib */; };
 		43C23AD11AB07CC3004DA244 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C23AD01AB07CC3004DA244 /* RLMSupport.swift */; };
@@ -48,6 +49,7 @@
 		4380F9811AAF826000BBAC40 /* fire.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fire.mp4; sourceTree = "<group>"; };
 		4380F9821AAF826000BBAC40 /* rain.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain.mp4; sourceTree = "<group>"; };
 		4380F9831AAF826000BBAC40 /* lunch-crowd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "lunch-crowd.mp3"; sourceTree = "<group>"; };
+		4390A7FF1ABB09F900A63641 /* NoisePlayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoisePlayManager.swift; sourceTree = "<group>"; };
 		43C23ACC1AB07C9A004DA244 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Realm.framework; sourceTree = "<group>"; };
 		43C23ACE1AB07CAC004DA244 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		43C23AD01AB07CC3004DA244 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMSupport.swift; path = ../RLMSupport.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				43D3D6671AA7991800473DD1 /* BackgroundColorRandomizer.swift */,
 				43C23AD21AB07D17004DA244 /* Noise.swift */,
+				4390A7FF1ABB09F900A63641 /* NoisePlayManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4390A8001ABB09F900A63641 /* NoisePlayManager.swift in Sources */,
 				43D3D6681AA7991800473DD1 /* BackgroundColorRandomizer.swift in Sources */,
 				43C23AD31AB07D17004DA244 /* Noise.swift in Sources */,
 				43C23AD11AB07CC3004DA244 /* RLMSupport.swift in Sources */,
