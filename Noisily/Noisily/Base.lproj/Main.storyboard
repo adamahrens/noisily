@@ -115,6 +115,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="jIZ-M9-Zeq" id="Rid-22-BIU"/>
+                                            <outlet property="volumeSlider" destination="wdj-oK-u2U" id="woa-N7-Not"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

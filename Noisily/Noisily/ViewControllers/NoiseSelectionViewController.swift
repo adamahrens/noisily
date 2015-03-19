@@ -13,8 +13,7 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let backgroundRandomizer = BackgroundColorRandomizer()
-    private let noises = Noise.allObjects()
-    private let noiseManager = NoisePlayerManager()
+    private let dataSource = NoiseDataSource()
     
     private var timer : NSTimer? = nil
     private var cellWidth = 0.0
@@ -23,8 +22,6 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = backgroundRandomizer.randomBackgroundColor()
-        
-        // Configure the collectionViewCellSize
         configureCellSizeForCurrentTraitCollection()
     }
     
@@ -51,17 +48,21 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     
     //MARK: UICollectionViewDatasource
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return dataSource.numberOfSections()
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int(noises.count)
+        return dataSource.numberOfNoises()
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("NoiseCollectionViewCell", forIndexPath: indexPath) as NoiseCollectionViewCell
-        let noise = noises[UInt(indexPath.row)] as Noise
+        let noise = dataSource.noiseAtIndexPath(indexPath)
         cell.imageView.image = UIImage(named: noise.imageName)
+        cell.volumeSlider.value = Float(dataSource.currentVolumeForNoise(noise))
+        cell.volumeSlider.addTarget(self, action: "volumeSliderChanged:", forControlEvents: .ValueChanged)
+        cell.volumeSlider.tag = indexPath.row
+        cell.volumeSlider.hidden = !dataSource.noiseIsPlaying(indexPath)
         return cell
     }
     
@@ -70,14 +71,18 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        
+        super.traitCollectionDidChange(previousTraitCollection)        
         configureCellSizeForCurrentTraitCollection()
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let selectedNoise = noises[UInt(indexPath.row)] as Noise
-        noiseManager.toggleNoise(selectedNoise)
+        dataSource.toggleNoiseAtIndexPath(indexPath)
+        collectionView.reloadItemsAtIndexPaths([indexPath])
+    }
+    
+    func volumeSliderChanged(slider: UISlider) {
+        let noise = dataSource.noiseAtIndexPath(NSIndexPath(forRow: slider.tag, inSection: 0))
+        dataSource.updateVolumeForNoise(noise, volume: Double(slider.value))
     }
     
     //MARK: Private

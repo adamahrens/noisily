@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43032C8F1ABB388800871A1C /* NoiseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43032C8E1ABB388800871A1C /* NoiseDataSource.swift */; };
 		4380F9841AAF826000BBAC40 /* waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97D1AAF826000BBAC40 /* waves.mp4 */; };
 		4380F9851AAF826000BBAC40 /* thunder.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97E1AAF826000BBAC40 /* thunder.mp4 */; };
 		4380F9861AAF826000BBAC40 /* birds.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97F1AAF826000BBAC40 /* birds.mp4 */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43032C8E1ABB388800871A1C /* NoiseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseDataSource.swift; path = Models/NoiseDataSource.swift; sourceTree = "<group>"; };
 		4380F97D1AAF826000BBAC40 /* waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = waves.mp4; sourceTree = "<group>"; };
 		4380F97E1AAF826000BBAC40 /* thunder.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = thunder.mp4; sourceTree = "<group>"; };
 		4380F97F1AAF826000BBAC40 /* birds.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = birds.mp4; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				43D3D6671AA7991800473DD1 /* BackgroundColorRandomizer.swift */,
 				43C23AD21AB07D17004DA244 /* Noise.swift */,
 				4390A7FF1ABB09F900A63641 /* NoisePlayManager.swift */,
+				43032C8E1ABB388800871A1C /* NoiseDataSource.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			files = (
 				4390A8001ABB09F900A63641 /* NoisePlayManager.swift in Sources */,
 				43D3D6681AA7991800473DD1 /* BackgroundColorRandomizer.swift in Sources */,
+				43032C8F1ABB388800871A1C /* NoiseDataSource.swift in Sources */,
 				43C23AD31AB07D17004DA244 /* Noise.swift in Sources */,
 				43C23AD11AB07CC3004DA244 /* RLMSupport.swift in Sources */,
 				43D3D6651AA798D100473DD1 /* NoiseSelectionViewController.swift in Sources */,

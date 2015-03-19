@@ -13,6 +13,8 @@ class NoisePlayerManager: NSObject, AVAudioPlayerDelegate {
     
     /**
     Toggles playing the noise. If currently playing turns it off, otherwise on
+    
+    :param: noise The Noise to toggle on/off
     */
     func toggleNoise(noise: Noise) {
         let noiseResource = noise.soundFilePath()
@@ -35,6 +37,26 @@ class NoisePlayerManager: NSObject, AVAudioPlayerDelegate {
         
         if (error != nil) {
            println("Error constructing player \(error)")
+        }
+    }
+    
+    /**
+    Determines if a noise is currently playing
+    */
+    func noiseIsPlaying(noise: Noise) -> Bool {
+        return players[noise.name] != nil
+    }
+    
+    /**
+    Adjusts the volume level of a noise if it's currently playing
+    
+    :param: noise The Noise to adjust
+    :param: volume Volume level between 0.0 and 1.0 (inclusive)
+    */
+    func adjustVolumeLevel(noise: Noise, volume: Double) {
+        if let player = players[noise.name] {
+            assert(volume >= 0.0 && volume <= 1.0, "Volume has to been in 0.0 - 1.0 range")
+            player.volume = Float(volume)
         }
     }
     
