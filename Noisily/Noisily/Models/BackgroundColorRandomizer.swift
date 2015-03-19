@@ -17,6 +17,11 @@ class BackgroundColorRandomizer: NSObject {
     
     private var currentColor: UIColor?
     
+    /**
+     Selects a random UIColor for a list of psychology approved colors
+    
+     :returns: Random UIColor
+    */
     func randomBackgroundColor() -> UIColor {
         var colors = self.colors
         for index in 0..<(colors.count - 1) {
