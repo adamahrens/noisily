@@ -52,17 +52,25 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.numberOfNoises()
+        // Adding extra for plus
+        return dataSource.numberOfNoises() + 1
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("NoiseCollectionViewCell", forIndexPath: indexPath) as NoiseCollectionViewCell
-        let noise = dataSource.noiseAtIndexPath(indexPath)
-        cell.imageView.image = UIImage(named: noise.imageName)
-        cell.volumeSlider.value = Float(dataSource.currentVolumeForNoise(noise))
-        cell.volumeSlider.addTarget(self, action: "volumeSliderChanged:", forControlEvents: .ValueChanged)
-        cell.volumeSlider.tag = indexPath.row
-        cell.volumeSlider.hidden = !dataSource.noiseIsPlaying(indexPath)
+        
+        if indexPath.row == dataSource.numberOfNoises() {
+            cell.imageView.image = UIImage(named: "Plus")
+            cell.volumeSlider.hidden = true
+        } else {
+            let noise = dataSource.noiseAtIndexPath(indexPath)
+            cell.imageView.image = UIImage(named: noise.imageName)
+            cell.volumeSlider.value = Float(dataSource.currentVolumeForNoise(noise))
+            cell.volumeSlider.addTarget(self, action: "volumeSliderChanged:", forControlEvents: .ValueChanged)
+            cell.volumeSlider.tag = indexPath.row
+            cell.volumeSlider.hidden = !dataSource.noiseIsPlaying(indexPath)
+        }
+       
         return cell
     }
     
@@ -76,8 +84,12 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        dataSource.toggleNoiseAtIndexPath(indexPath)
-        collectionView.reloadItemsAtIndexPaths([indexPath])
+        if indexPath.row == dataSource.numberOfNoises() {
+            self.performSegueWithIdentifier("ShowLayeringViewController", sender: nil)
+        } else {
+            dataSource.toggleNoiseAtIndexPath(indexPath)
+            collectionView.reloadItemsAtIndexPaths([indexPath])
+        }
     }
     
     func volumeSliderChanged(slider: UISlider) {
