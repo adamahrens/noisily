@@ -37,22 +37,12 @@ class NoiseLayeringViewController: UIViewController {
         // Blur the background
         let blurEffect = UIBlurEffect(style: .Light)
         let blurView = UIVisualEffectView(effect: blurEffect)
-        let vibrancyEffect = UIVibrancyEffect(forBlurEffect: blurEffect)
-        let vibrancyView = UIVisualEffectView(effect: vibrancyEffect)
-        
-        vibrancyView.setTranslatesAutoresizingMaskIntoConstraints(false)
         blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.view.insertSubview(blurView, atIndex: 0)
-        
-        multiSectorControl.addSubview(vibrancyView)
         
         // Have equal width and height
         var equalHeight = NSLayoutConstraint(item: blurView, attribute: .Height, relatedBy: .Equal, toItem: self.view, attribute: .Height, multiplier: 1.0, constant: 0.0)
         var equalWidth = NSLayoutConstraint(item: blurView, attribute: .Width, relatedBy: .Equal, toItem: self.view, attribute: .Width, multiplier: 1.0, constant: 0.0)
-        self.view.addConstraints([equalHeight, equalWidth])
-        
-        equalHeight = NSLayoutConstraint(item: vibrancyView, attribute: .Height, relatedBy: .Equal, toItem: self.view, attribute: .Height, multiplier: 1.0, constant: 0.0)
-        equalWidth = NSLayoutConstraint(item: vibrancyView, attribute: .Width, relatedBy: .Equal, toItem: self.view, attribute: .Width, multiplier: 1.0, constant: 0.0)
         self.view.addConstraints([equalHeight, equalWidth])
     }
 
