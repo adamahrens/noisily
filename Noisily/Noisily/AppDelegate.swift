@@ -67,6 +67,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         lunch.fileType = "mp3"
         lunch.imageName = "Lunch"
         
+        let whale = Noise()
+        whale.name = "Whale"
+        whale.fileName = "Whale"
+        whale.fileType = "mp3"
+        whale.imageName = "Whale"
+        
         let realm = RLMRealm.defaultRealm()
         realm.beginWriteTransaction()
         realm.addObject(fire)
@@ -76,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         realm.addObject(rain)
         realm.addObject(bird)
         realm.addObject(lunch)
+        realm.addObject(whale)
         realm.commitWriteTransaction()
         
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: key)

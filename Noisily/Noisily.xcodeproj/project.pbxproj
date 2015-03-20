@@ -11,6 +11,7 @@
 		43032C961ABB574F00871A1C /* SAMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 43032C931ABB574F00871A1C /* SAMath.m */; };
 		43032C971ABB574F00871A1C /* SAMultisectorControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 43032C951ABB574F00871A1C /* SAMultisectorControl.m */; };
 		43032C9C1ABB58AF00871A1C /* NoiseLayeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43032C9B1ABB58AF00871A1C /* NoiseLayeringViewController.swift */; };
+		4319C3C21ABC9B710075FEC7 /* Whale.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4319C3C11ABC9B710075FEC7 /* Whale.mp3 */; };
 		4380F9841AAF826000BBAC40 /* waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97D1AAF826000BBAC40 /* waves.mp4 */; };
 		4380F9851AAF826000BBAC40 /* thunder.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97E1AAF826000BBAC40 /* thunder.mp4 */; };
 		4380F9861AAF826000BBAC40 /* birds.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97F1AAF826000BBAC40 /* birds.mp4 */; };
@@ -53,6 +54,7 @@
 		43032C941ABB574F00871A1C /* SAMultisectorControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMultisectorControl.h; sourceTree = "<group>"; };
 		43032C951ABB574F00871A1C /* SAMultisectorControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMultisectorControl.m; sourceTree = "<group>"; };
 		43032C9B1ABB58AF00871A1C /* NoiseLayeringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseLayeringViewController.swift; path = ViewControllers/NoiseLayeringViewController.swift; sourceTree = "<group>"; };
+		4319C3C11ABC9B710075FEC7 /* Whale.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Whale.mp3; sourceTree = "<group>"; };
 		4380F97D1AAF826000BBAC40 /* waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = waves.mp4; sourceTree = "<group>"; };
 		4380F97E1AAF826000BBAC40 /* thunder.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = thunder.mp4; sourceTree = "<group>"; };
 		4380F97F1AAF826000BBAC40 /* birds.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = birds.mp4; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		4380F97C1AAF823F00BBAC40 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				4319C3C11ABC9B710075FEC7 /* Whale.mp3 */,
 				4380F97D1AAF826000BBAC40 /* waves.mp4 */,
 				4380F97E1AAF826000BBAC40 /* thunder.mp4 */,
 				4380F97F1AAF826000BBAC40 /* birds.mp4 */,
@@ -315,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4380F9851AAF826000BBAC40 /* thunder.mp4 in Resources */,
+				4319C3C21ABC9B710075FEC7 /* Whale.mp3 in Resources */,
 				43D3D6411AA77B6F00473DD1 /* Main.storyboard in Resources */,
 				4380F9861AAF826000BBAC40 /* birds.mp4 in Resources */,
 				43D3D6461AA77B6F00473DD1 /* LaunchScreen.xib in Resources */,

@@ -63,7 +63,11 @@ public class NoiseDataSource {
     Retrieves the current volume level for the Noise
     */
     func currentVolumeForNoise(noise: Noise) -> Double {
-        return noiseVolumes[noise.name]!
+        if let volume = noiseVolumes[noise.name] {
+            return volume
+        }
+        
+        return 0.4
     }
     
     /**
