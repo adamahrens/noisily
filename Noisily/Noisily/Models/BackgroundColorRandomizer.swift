@@ -23,23 +23,8 @@ class BackgroundColorRandomizer: NSObject {
      :returns: Random UIColor
     */
     func randomBackgroundColor() -> UIColor {
-        var colors = self.colors
-        for index in 0..<(colors.count - 1) {
-            let randomIndex = Int(arc4random_uniform(UInt32(colors.count - index))) + index
-            let firstColor = colors[index]
-            colors[index] = colors[randomIndex]
-            colors[randomIndex] = firstColor
-        }
-        
-        var color = colors.first!
-        if let currentColor = currentColor {
-            if currentColor == color {
-                color = colors[1]
-            }
-        } else {
-            currentColor = color
-        }
-        
-        return color
+        let randomIndex = Int(arc4random_uniform(UInt32(self.colors.count)))
+//        return self.colors[randomIndex]
+        return self.colors.filter({ $0 == self.colors[randomIndex]}).first!
     }
 }
