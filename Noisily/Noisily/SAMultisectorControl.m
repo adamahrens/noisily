@@ -359,20 +359,13 @@ typedef struct{
 }
 
 - (void) drawString:(NSString *)s withFont:(UIFont *)font color:(UIColor *)color withCenter:(CGPoint)center{
-    CGSize size = [s sizeWithFont:font];
+    CGSize size = [s sizeWithAttributes:@{ NSFontAttributeName : font}];
     CGFloat x = center.x - (size.width / 2);
     CGFloat y = center.y - (size.height / 2);
     CGRect textRect = CGRectMake(x, y, size.width, size.height);
     
-    if(IS_OS_LOWER_7){
-        [color set];
-        [s drawInRect:textRect withFont:font];
-    }else{
-        NSMutableDictionary *attr = [NSMutableDictionary new];
-        attr[UITextAttributeFont] = font;
-        attr[UITextAttributeTextColor] = color;
-        [s drawInRect:textRect withAttributes:attr];
-    }
+    NSDictionary *attr = @{ NSFontAttributeName : font, NSForegroundColorAttributeName : color };
+    [s drawInRect:textRect withAttributes:attr];
 }
 
 

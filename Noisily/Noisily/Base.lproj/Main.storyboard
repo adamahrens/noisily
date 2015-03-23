@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JZy-j1-P2Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JZy-j1-P2Z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -34,7 +34,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bird" translatesAutoresizingMaskIntoConstraints="NO" id="jIZ-M9-Zeq">
-                                                    <rect key="frame" x="105" y="8" width="94" height="78"/>
+                                                    <rect key="frame" x="60.5" y="8" width="183" height="154"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="96" id="0LS-Oc-p3T"/>
                                                         <constraint firstAttribute="width" constant="120" id="4Fb-HI-zX9">
@@ -159,6 +159,35 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NVA-gA-hfk">
+                                <rect key="frame" x="0.0" y="500" width="600" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5oH-Qh-p0v"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoiseCell" textLabel="IdL-nT-Gmr" style="IBUITableViewCellStyleDefault" id="KwX-hq-2WJ">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KwX-hq-2WJ" id="2gw-q8-v3G">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IdL-nT-Gmr">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Q5F-yW-SG6" id="gOr-Gn-yg7"/>
+                                    <outlet property="delegate" destination="Q5F-yW-SG6" id="g54-0B-Nyu"/>
+                                </connections>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75Y-Op-DcI">
                                 <rect key="frame" x="567" y="28" width="25" height="25"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -181,9 +210,12 @@
                             <constraint firstAttribute="trailing" secondItem="YJW-MC-Xgo" secondAttribute="trailing" id="HjO-bD-Y4U"/>
                             <constraint firstItem="YJW-MC-Xgo" firstAttribute="leading" secondItem="S0d-NB-glp" secondAttribute="leading" id="JrP-Cg-xA1"/>
                             <constraint firstAttribute="trailing" secondItem="75Y-Op-DcI" secondAttribute="trailing" constant="8" id="XJP-j5-Ail"/>
+                            <constraint firstAttribute="trailing" secondItem="NVA-gA-hfk" secondAttribute="trailing" id="aB4-Xi-odn"/>
                             <constraint firstItem="hG2-v7-ZGj" firstAttribute="top" secondItem="YJW-MC-Xgo" secondAttribute="bottom" id="eqJ-Br-Nyx"/>
                             <constraint firstItem="YJW-MC-Xgo" firstAttribute="top" secondItem="S0d-NB-glp" secondAttribute="top" id="iWt-qd-VeJ"/>
                             <constraint firstItem="75Y-Op-DcI" firstAttribute="top" secondItem="8ic-uT-mgK" secondAttribute="bottom" constant="8" id="lgU-S1-XTq"/>
+                            <constraint firstItem="NVA-gA-hfk" firstAttribute="leading" secondItem="S0d-NB-glp" secondAttribute="leading" id="qEF-8M-44R"/>
+                            <constraint firstItem="hG2-v7-ZGj" firstAttribute="top" secondItem="NVA-gA-hfk" secondAttribute="bottom" id="zJ2-tA-fWA"/>
                         </constraints>
                     </view>
                     <connections>
@@ -196,7 +228,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bird" width="94" height="78"/>
+        <image name="Bird" width="183" height="154"/>
         <image name="Close" width="143" height="143"/>
     </resources>
 </document>

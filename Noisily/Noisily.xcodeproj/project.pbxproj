@@ -20,6 +20,9 @@
 		4380F9891AAF826000BBAC40 /* rain.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9821AAF826000BBAC40 /* rain.mp4 */; };
 		4380F98A1AAF826000BBAC40 /* lunch-crowd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F9831AAF826000BBAC40 /* lunch-crowd.mp3 */; };
 		4390A8001ABB09F900A63641 /* NoisePlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390A7FF1ABB09F900A63641 /* NoisePlayManager.swift */; };
+		43BBFDB91AC05B310090DE8C /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBFDB81AC05B310090DE8C /* Set.swift */; };
+		43BBFDBB1AC05D580090DE8C /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBFDBA1AC05D580090DE8C /* SetTests.swift */; };
+		43BBFDBC1AC05DCB0090DE8C /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBFDB81AC05B310090DE8C /* Set.swift */; };
 		43C23ACD1AB07C9A004DA244 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C23ACC1AB07C9A004DA244 /* Realm.framework */; };
 		43C23ACF1AB07CAC004DA244 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C23ACE1AB07CAC004DA244 /* libc++.dylib */; };
 		43C23AD11AB07CC3004DA244 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C23AD01AB07CC3004DA244 /* RLMSupport.swift */; };
@@ -63,6 +66,8 @@
 		4380F9821AAF826000BBAC40 /* rain.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain.mp4; sourceTree = "<group>"; };
 		4380F9831AAF826000BBAC40 /* lunch-crowd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "lunch-crowd.mp3"; sourceTree = "<group>"; };
 		4390A7FF1ABB09F900A63641 /* NoisePlayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoisePlayManager.swift; sourceTree = "<group>"; };
+		43BBFDB81AC05B310090DE8C /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Set.swift; path = Collections/Set.swift; sourceTree = "<group>"; };
+		43BBFDBA1AC05D580090DE8C /* SetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		43C23ACC1AB07C9A004DA244 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Realm.framework; sourceTree = "<group>"; };
 		43C23ACE1AB07CAC004DA244 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		43C23AD01AB07CC3004DA244 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMSupport.swift; path = ../RLMSupport.swift; sourceTree = "<group>"; };
@@ -129,6 +134,14 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
+		43BBFDB71AC05B0F0090DE8C /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				43BBFDB81AC05B310090DE8C /* Set.swift */,
+			);
+			name = Collections;
+			sourceTree = "<group>";
+		};
 		43C23AD41AB07D34004DA244 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +174,7 @@
 		43D3D6381AA77B6F00473DD1 /* Noisily */ = {
 			isa = PBXGroup;
 			children = (
+				43BBFDB71AC05B0F0090DE8C /* Collections */,
 				43C23AD41AB07D34004DA244 /* Vendor */,
 				4380F97C1AAF823F00BBAC40 /* Sounds */,
 				43D3D6691AA7C20400473DD1 /* CollectionViewCell */,
@@ -188,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				43D3D6601AA787A700473DD1 /* UIColorExtensionTests.swift */,
+				43BBFDBA1AC05D580090DE8C /* SetTests.swift */,
 				43D3D64F1AA77B6F00473DD1 /* Supporting Files */,
 			);
 			path = NoisilyTests;
@@ -347,6 +362,7 @@
 			files = (
 				43032C9C1ABB58AF00871A1C /* NoiseLayeringViewController.swift in Sources */,
 				4390A8001ABB09F900A63641 /* NoisePlayManager.swift in Sources */,
+				43BBFDB91AC05B310090DE8C /* Set.swift in Sources */,
 				43D3D6681AA7991800473DD1 /* BackgroundColorRandomizer.swift in Sources */,
 				43032C8F1ABB388800871A1C /* NoiseDataSource.swift in Sources */,
 				43C23AD31AB07D17004DA244 /* Noise.swift in Sources */,
@@ -364,7 +380,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BBFDBC1AC05DCB0090DE8C /* Set.swift in Sources */,
 				43D3D6621AA7880E00473DD1 /* UIColor+Extension.swift in Sources */,
+				43BBFDBB1AC05D580090DE8C /* SetTests.swift in Sources */,
 				43D3D6611AA787A700473DD1 /* UIColorExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
