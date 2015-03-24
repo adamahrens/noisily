@@ -16,33 +16,13 @@ class NoiseLayeringViewController: UIViewController, UITableViewDataSource, UITa
     private let selectedPaths = Set<NSIndexPath>()
     
     // Used for how many noises we can layer together
-    private var maxSectors = 5
+    private let maxSectors = 3
+    
+    // Currently displayed sectors
+    private var currentSectors = [[String: SAMultisectorSector]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Determine max number of noises
-        // that can be selected
-        determineMaxNumberOfSelections()
-        
-        // Add a sector
-        let sector = SAMultisectorSector(color: UIColor.whiteColor(), minValue: 1.0, maxValue: 100.0)
-        sector.tag = 1
-        
-        let sector2 = SAMultisectorSector(color: UIColor.brightPink(), minValue: 1.0, maxValue: 100.0)
-        sector.tag = 2
-        
-        let sector3 = SAMultisectorSector(color: UIColor.whiteColor(), minValue: 1.0, maxValue: 100.0)
-        sector.tag = 3
-        
-        let sector4 = SAMultisectorSector(color: UIColor.brightPink(), minValue: 1.0, maxValue: 100.0)
-        sector.tag = 4
-        
-        // Add it to the control
-        multiSectorControl.addSector(sector)
-        multiSectorControl.addSector(sector2)
-        multiSectorControl.addSector(sector3)
-        //multiSectorControl.addSector(sector4)
         
         // Blur the background
         let blurEffect = UIBlurEffect(style: .Light)
@@ -95,9 +75,23 @@ class NoiseLayeringViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if selectedPaths.contains(indexPath) {
+            let noiseName = dataSource.noiseAtIndexPath(indexPath).name
             selectedPaths.remove(indexPath)
+            let found = currentSectors.filter { $0.keys.first! == noiseName }
+            if let dictionary = found.first {
+                let sectorToRemove = dictionary.values.first!
+                multiSectorControl.removeSector(sectorToRemove)
+                currentSectors = currentSectors.filter{ $0.keys.first! != noiseName }
+            }
         } else {
+            // Add a sector
             selectedPaths.add(indexPath)
+            let color = selectedPaths.size() % 2 == 0 ? UIColor.whiteColor() : UIColor.brightPink()
+            let sector = SAMultisectorSector(color: color, minValue: 1.0, maxValue: 20.0)
+            let noiseName = dataSource.noiseAtIndexPath(indexPath).name
+            sector.tag = selectedPaths.size()
+            multiSectorControl.addSector(sector)
+            currentSectors.append([noiseName: sector])
         }
         
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)

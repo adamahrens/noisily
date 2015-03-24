@@ -15,14 +15,15 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     private let backgroundRandomizer = BackgroundColorRandomizer()
     private let dataSource = NoiseDataSource()
     
-    private var timer : NSTimer? = nil
+    private var timer : NSTimer?
     private var cellWidth = 0.0
     private var cellHeight = 0.0
     
+    //MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = backgroundRandomizer.randomBackgroundColor()
-        configureCellSizeForCurrentTraitCollection()
+        configureCellSizeForCurrentTraitCollection(self.traitCollection)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -36,6 +37,20 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
         timer = nil
     }
     
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+    }
+    
+    //MARK: TraitCollection
+    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
+        
+        // Animate the reloading of the collectionView
+        configureCellSizeForCurrentTraitCollection(newCollection)
+        coordinator.animateAlongsideTransition({context in self.collectionView.reloadData()}, completion: nil)
+    }
+
+    //MARK: NSTimer Selector
     func changeBackgroundColor() {
         let newBackgroundColor = backgroundRandomizer.randomBackgroundColor()
         var animation = CABasicAnimation(keyPath: "backgroundColor")
@@ -46,7 +61,7 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
         self.view.backgroundColor = newBackgroundColor
     }
     
-    //MARK: UICollectionViewDatasource
+    //MARK: UICollectionView Datasource & Delegate
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return dataSource.numberOfSections()
     }
@@ -78,11 +93,6 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)        
-        configureCellSizeForCurrentTraitCollection()
-    }
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == dataSource.numberOfNoises() {
             self.performSegueWithIdentifier("ShowLayeringViewController", sender: nil)
@@ -92,27 +102,28 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
         }
     }
     
+    //MARK: Volume Changes
     func volumeSliderChanged(slider: UISlider) {
         let noise = dataSource.noiseAtIndexPath(NSIndexPath(forRow: slider.tag, inSection: 0))
         dataSource.updateVolumeForNoise(noise, volume: Double(slider.value))
     }
     
     //MARK: Private
-    private func configureCellSizeForCurrentTraitCollection() {
+    private func configureCellSizeForCurrentTraitCollection(traitCollection: UITraitCollection) {
         // iPhone 4, 5, 6 in Landscape
-        if self.traitCollection.horizontalSizeClass == .Compact && self.traitCollection.verticalSizeClass == .Compact {
+        if traitCollection.horizontalSizeClass == .Compact && traitCollection.verticalSizeClass == .Compact {
             cellWidth = 120.0
             cellHeight = 130.0
         }
         
         // iPhone 6+ in Landscape
-        if self.traitCollection.horizontalSizeClass == .Regular && self.traitCollection.verticalSizeClass == .Compact {
+        if traitCollection.horizontalSizeClass == .Regular && traitCollection.verticalSizeClass == .Compact {
             cellWidth = 160.0
             cellHeight = 180.0
         }
         
         // iPhone's in portrait
-        if self.traitCollection.horizontalSizeClass == .Compact && self.traitCollection.verticalSizeClass == .Regular {
+        if traitCollection.horizontalSizeClass == .Compact && traitCollection.verticalSizeClass == .Regular {
             cellWidth = 120.0
             cellHeight = 150.0
         }
@@ -120,11 +131,9 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
         // iPad Portrait or Landscape
         // Check if pad. Could eventually have a phone that's Regular
         // in Vertical & Horizontal size class
-        if self.traitCollection.userInterfaceIdiom == .Pad &&  self.traitCollection.horizontalSizeClass == .Regular && self.traitCollection.verticalSizeClass == .Regular {
+        if traitCollection.userInterfaceIdiom == .Pad && traitCollection.horizontalSizeClass == .Regular && traitCollection.verticalSizeClass == .Regular {
             cellWidth = 300.0
             cellHeight = 300.0
         }
-        
-        self.collectionView.reloadData()
     }
 }
