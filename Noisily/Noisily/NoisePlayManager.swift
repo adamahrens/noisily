@@ -59,8 +59,4 @@ class NoisePlayerManager: NSObject, AVAudioPlayerDelegate {
             player.volume = Float(volume)
         }
     }
-    
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
-        println("Finished Playing")
-    }
 }

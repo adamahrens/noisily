@@ -91,6 +91,7 @@ class NoiseLayeringViewController: UIViewController, UITableViewDataSource, UITa
             let noiseName = dataSource.noiseAtIndexPath(indexPath).name
             sector.tag = selectedPaths.size()
             multiSectorControl.addSector(sector)
+            multiSectorControl.setNeedsDisplay()
             currentSectors.append([noiseName: sector])
         }
         

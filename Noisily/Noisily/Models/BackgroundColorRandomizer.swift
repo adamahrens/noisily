@@ -15,8 +15,6 @@ class BackgroundColorRandomizer: NSObject {
         }
     }
     
-    private var currentColor: UIColor?
-    
     /**
      Selects a random UIColor for a list of psychology approved colors
     
@@ -24,7 +22,6 @@ class BackgroundColorRandomizer: NSObject {
     */
     func randomBackgroundColor() -> UIColor {
         let randomIndex = Int(arc4random_uniform(UInt32(self.colors.count)))
-//        return self.colors[randomIndex]
         return self.colors.filter({ $0 == self.colors[randomIndex]}).first!
     }
 }
