@@ -9,7 +9,7 @@
 import UIKit
 
 class BackgroundColorRandomizer: NSObject {
-    private var colors: [UIColor] {
+    private var colors: Array<UIColor>{
         get {
             return [UIColor.deepRed(), UIColor.foliageGreen(), UIColor.brightPink(), UIColor.aqua(), UIColor.peach(), UIColor.lightBlue(), UIColor.goldenYellow(), UIColor.charcoalGray(), UIColor.lightGreen(), UIColor.bluePurple()]
         }

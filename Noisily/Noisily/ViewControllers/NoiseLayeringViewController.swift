@@ -15,11 +15,8 @@ class NoiseLayeringViewController: UIViewController, UITableViewDataSource, UITa
     private let dataSource = NoiseDataSource()
     private let selectedPaths = Set<NSIndexPath>()
     
-    // Used for how many noises we can layer together
-    private let maxSectors = 3
-    
     // Currently displayed sectors
-    private var currentSectors = [[String: SAMultisectorSector]]()
+    private var currentSectors = Array<Dictionary<String,SAMultisectorSector>>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,10 +93,5 @@ class NoiseLayeringViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    }
-    
-    //MARK: Private Helpers
-    private func determineMaxNumberOfSelections() {
-        
     }
 }

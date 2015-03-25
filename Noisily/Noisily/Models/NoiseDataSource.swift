@@ -12,12 +12,12 @@ public class NoiseDataSource {
   
     private let noises = Noise.allObjects()
     private let noiseManager = NoisePlayerManager()
-    private var noiseVolumes = [String: Double]()
+    private var noiseVolumes = [Noise: Double]()
     
     init () {
         for noise in noises {
             let n = noise as Noise
-            noiseVolumes[n.name] = 0.4
+            noiseVolumes[n] = 0.4
         }
     }
     
@@ -63,7 +63,7 @@ public class NoiseDataSource {
     Retrieves the current volume level for the Noise
     */
     func currentVolumeForNoise(noise: Noise) -> Double {
-        if let volume = noiseVolumes[noise.name] {
+        if let volume = noiseVolumes[noise] {
             return volume
         }
         
@@ -75,6 +75,6 @@ public class NoiseDataSource {
     */
     func updateVolumeForNoise(noise: Noise, volume: Double) {
         noiseManager.adjustVolumeLevel(noise, volume: volume)
-        noiseVolumes[noise.name] = volume
+        noiseVolumes[noise] = volume
     }
 }
