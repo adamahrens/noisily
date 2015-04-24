@@ -16,7 +16,7 @@ public class NoiseDataSource {
     
     init () {
         for noise in noises {
-            let n = noise as Noise
+            let n = noise as! Noise
             noiseVolumes[n] = 0.4
         }
     }
@@ -56,7 +56,7 @@ public class NoiseDataSource {
     Retrieves a noise at an indexPath
     */
     func noiseAtIndexPath(indexPath: NSIndexPath) -> Noise {
-        return noises[UInt(indexPath.row)] as Noise
+        return noises[UInt(indexPath.row)] as! Noise
     }
     
     /**

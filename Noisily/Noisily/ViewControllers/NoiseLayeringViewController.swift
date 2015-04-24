@@ -57,7 +57,7 @@ class NoiseLayeringViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("NoiseCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("NoiseCell", forIndexPath: indexPath) as! UITableViewCell
         cell.textLabel!.text = dataSource.noiseAtIndexPath(indexPath).name
         cell.textLabel!.textColor = UIColor.whiteColor()
         

@@ -22,6 +22,8 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     //MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.backgroundColor! = UIColor.clearColor()
         self.view.backgroundColor = backgroundRandomizer.randomBackgroundColor()
         configureCellSizeForCurrentTraitCollection(self.traitCollection)
     }
@@ -71,8 +73,8 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("NoiseCollectionViewCell", forIndexPath: indexPath) as NoiseCollectionViewCell
-        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("NoiseCollectionViewCell", forIndexPath: indexPath) as! NoiseCollectionViewCell
+        cell.backgroundColor! = UIColor.clearColor()
         if indexPath.row == dataSource.numberOfNoises() {
             cell.imageView.image = UIImage(named: "Plus")
             cell.volumeSlider.hidden = true
