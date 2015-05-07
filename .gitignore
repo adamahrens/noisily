@@ -18,3 +18,4 @@ DerivedData
 *.xcuserstate
 *.xcworkspace
 contents.xcworkspacedata
+.idea
