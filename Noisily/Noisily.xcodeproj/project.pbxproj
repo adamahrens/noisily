@@ -12,6 +12,7 @@
 		43032C971ABB574F00871A1C /* SAMultisectorControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 43032C951ABB574F00871A1C /* SAMultisectorControl.m */; };
 		43032C9C1ABB58AF00871A1C /* NoiseLayeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43032C9B1ABB58AF00871A1C /* NoiseLayeringViewController.swift */; };
 		4319C3C21ABC9B710075FEC7 /* Whale.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4319C3C11ABC9B710075FEC7 /* Whale.mp3 */; };
+		4368BEDA1B3A47490048A161 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4368BED91B3A47490048A161 /* Reveal.framework */; };
 		4380F9841AAF826000BBAC40 /* waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97D1AAF826000BBAC40 /* waves.mp4 */; };
 		4380F9851AAF826000BBAC40 /* thunder.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97E1AAF826000BBAC40 /* thunder.mp4 */; };
 		4380F9861AAF826000BBAC40 /* birds.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97F1AAF826000BBAC40 /* birds.mp4 */; };
@@ -58,6 +59,7 @@
 		43032C951ABB574F00871A1C /* SAMultisectorControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMultisectorControl.m; sourceTree = "<group>"; };
 		43032C9B1ABB58AF00871A1C /* NoiseLayeringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseLayeringViewController.swift; path = ViewControllers/NoiseLayeringViewController.swift; sourceTree = "<group>"; };
 		4319C3C11ABC9B710075FEC7 /* Whale.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Whale.mp3; sourceTree = "<group>"; };
+		4368BED91B3A47490048A161 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		4380F97D1AAF826000BBAC40 /* waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = waves.mp4; sourceTree = "<group>"; };
 		4380F97E1AAF826000BBAC40 /* thunder.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = thunder.mp4; sourceTree = "<group>"; };
 		4380F97F1AAF826000BBAC40 /* birds.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = birds.mp4; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4368BEDA1B3A47490048A161 /* Reveal.framework in Frameworks */,
 				43C23ACF1AB07CAC004DA244 /* libc++.dylib in Frameworks */,
 				43C23ACD1AB07C9A004DA244 /* Realm.framework in Frameworks */,
 			);
@@ -193,6 +196,7 @@
 		43D3D6391AA77B6F00473DD1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4368BED91B3A47490048A161 /* Reveal.framework */,
 				43D3D63A1AA77B6F00473DD1 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -502,9 +506,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Noisily",
 				);
 				INFOPLIST_FILE = Noisily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Noisily/Noisily-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -520,9 +531,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Noisily",
 				);
 				INFOPLIST_FILE = Noisily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Noisily/Noisily-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
