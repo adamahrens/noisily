@@ -14,7 +14,7 @@ class Set<T: Equatable> {
     /**
     Adds the element if it's not already contained
     
-    :param: element Element to add if it's not already added
+    - parameter element: Element to add if it's not already added
     */
     func add(element: T) {
         if contains(element) {
@@ -27,7 +27,7 @@ class Set<T: Equatable> {
     /**
     Removes the element if it's present
     
-    :param: element Element to remove if it's present
+    - parameter element: Element to remove if it's present
     */
     func remove(element: T) {
         if !contains(element) {
@@ -40,7 +40,7 @@ class Set<T: Equatable> {
     /**
     Returns the number of elements in the Set
 
-    :returns: number of elements, 0 if empty
+    - returns: number of elements, 0 if empty
     */
     func size() -> Int {
         return elements.count
@@ -49,8 +49,8 @@ class Set<T: Equatable> {
     /**
     Checks if an element is contained in the set
     
-    :param: element Element to check if it's contained in the Set
-    :returns: true if in the Set, false otherwise
+    - parameter element: Element to check if it's contained in the Set
+    - returns: true if in the Set, false otherwise
     */
     func contains(element: T) -> Bool {
         return elements.filter { $0 == element }.count == 1

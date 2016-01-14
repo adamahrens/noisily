@@ -24,12 +24,12 @@ class NoiseLayeringViewController: UIViewController, UITableViewDataSource, UITa
         // Blur the background
         let blurEffect = UIBlurEffect(style: .Light)
         let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        blurView.translatesAutoresizingMaskIntoConstraints = false
         self.view.insertSubview(blurView, atIndex: 0)
         
         // Have equal width and height
-        var equalHeight = NSLayoutConstraint(item: blurView, attribute: .Height, relatedBy: .Equal, toItem: self.view, attribute: .Height, multiplier: 1.0, constant: 0.0)
-        var equalWidth = NSLayoutConstraint(item: blurView, attribute: .Width, relatedBy: .Equal, toItem: self.view, attribute: .Width, multiplier: 1.0, constant: 0.0)
+        let equalHeight = NSLayoutConstraint(item: blurView, attribute: .Height, relatedBy: .Equal, toItem: self.view, attribute: .Height, multiplier: 1.0, constant: 0.0)
+        let equalWidth = NSLayoutConstraint(item: blurView, attribute: .Width, relatedBy: .Equal, toItem: self.view, attribute: .Width, multiplier: 1.0, constant: 0.0)
         self.view.addConstraints([equalHeight, equalWidth])
 
         // Want white checkmarks for UItableViewCells
@@ -57,7 +57,7 @@ class NoiseLayeringViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("NoiseCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("NoiseCell", forIndexPath: indexPath) 
         cell.textLabel!.text = dataSource.noiseAtIndexPath(indexPath).name
         cell.textLabel!.textColor = UIColor.whiteColor()
         

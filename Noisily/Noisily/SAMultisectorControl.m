@@ -295,7 +295,7 @@ typedef struct{
     CGContextStrokePath(context);
     
     //text on markers
-    NSString *markerStrTemplate = [@"%.0f" stringByReplacingOccurrencesOfString:@"0" withString:[NSString stringWithFormat:@"%i", self.numbersAfterPoint]];
+    NSString *markerStrTemplate = [@"%.0f" stringByReplacingOccurrencesOfString:@"0" withString:[NSString stringWithFormat:@"%lu", (unsigned long)self.numbersAfterPoint]];
     NSString *startMarkerStr = [NSString stringWithFormat:markerStrTemplate, sector.startValue];
     NSString *endMarkerStr = [NSString stringWithFormat:markerStrTemplate, sector.endValue];
     

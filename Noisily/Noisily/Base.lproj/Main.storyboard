@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JZy-j1-P2Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JZy-j1-P2Z">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Noise Selection View Controller-->
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="16" width="600" height="584"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.19215686269999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MyM-BI-hNj">
-                                    <size key="itemSize" width="304" height="301"/>
+                                    <size key="itemSize" width="186" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -30,11 +30,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="304" height="301"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="186" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bird" translatesAutoresizingMaskIntoConstraints="NO" id="jIZ-M9-Zeq">
-                                                    <rect key="frame" x="60.5" y="8" width="183" height="154"/>
+                                                    <rect key="frame" x="2" y="8" width="183" height="154"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="96" id="0LS-Oc-p3T"/>
                                                         <constraint firstAttribute="width" constant="120" id="4Fb-HI-zX9">
@@ -71,13 +71,15 @@
                                                             <exclude reference="i0C-Wv-adB"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=compact-widthClass=compact">
+                                                    <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="115" y="8" width="76" height="76"/>
                                                         <mask key="constraints">
                                                             <include reference="Kl2-DP-nXa"/>
                                                             <include reference="ZE2-fu-v9c"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=compact-widthClass=regular">
+                                                    <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="105" y="8" width="96" height="96"/>
                                                         <mask key="constraints">
                                                             <include reference="4cT-qc-7IA"/>
                                                             <include reference="6dd-Bx-llj"/>
@@ -97,7 +99,7 @@
                                                     </variation>
                                                 </imageView>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wdj-oK-u2U">
-                                                    <rect key="frame" x="6" y="269" width="292" height="31"/>
+                                                    <rect key="frame" x="6" y="118" width="174" height="31"/>
                                                     <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -113,6 +115,11 @@
                                             <constraint firstAttribute="trailing" secondItem="wdj-oK-u2U" secondAttribute="trailing" constant="8" id="cN8-tS-UwV"/>
                                             <constraint firstAttribute="bottom" secondItem="wdj-oK-u2U" secondAttribute="bottom" constant="2" id="fu5-me-Vin"/>
                                         </constraints>
+                                        <variation key="heightClass=compact-widthClass=regular">
+                                            <mask key="constraints">
+                                                <exclude reference="Pcp-bR-lBV"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="imageView" destination="jIZ-M9-Zeq" id="Rid-22-BIU"/>
                                             <outlet property="volumeSlider" destination="wdj-oK-u2U" id="woa-N7-Not"/>

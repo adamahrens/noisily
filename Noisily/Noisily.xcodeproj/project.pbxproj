@@ -12,6 +12,12 @@
 		43032C971ABB574F00871A1C /* SAMultisectorControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 43032C951ABB574F00871A1C /* SAMultisectorControl.m */; };
 		43032C9C1ABB58AF00871A1C /* NoiseLayeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43032C9B1ABB58AF00871A1C /* NoiseLayeringViewController.swift */; };
 		4319C3C21ABC9B710075FEC7 /* Whale.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4319C3C11ABC9B710075FEC7 /* Whale.mp3 */; };
+		4364BFEC1C47EAA600ABB55A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4364BFEA1C47EAA600ABB55A /* Realm.framework */; };
+		4364BFED1C47EAA600ABB55A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4364BFEB1C47EAA600ABB55A /* RealmSwift.framework */; };
+		4364BFEE1C47EAAE00ABB55A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4364BFEA1C47EAA600ABB55A /* Realm.framework */; };
+		4364BFEF1C47EAAE00ABB55A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4364BFEA1C47EAA600ABB55A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4364BFF01C47EAAE00ABB55A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4364BFEB1C47EAA600ABB55A /* RealmSwift.framework */; };
+		4364BFF11C47EAAE00ABB55A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4364BFEB1C47EAA600ABB55A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4368BEDA1B3A47490048A161 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4368BED91B3A47490048A161 /* Reveal.framework */; };
 		4380F9841AAF826000BBAC40 /* waves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97D1AAF826000BBAC40 /* waves.mp4 */; };
 		4380F9851AAF826000BBAC40 /* thunder.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4380F97E1AAF826000BBAC40 /* thunder.mp4 */; };
@@ -24,7 +30,6 @@
 		43BBFDB91AC05B310090DE8C /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBFDB81AC05B310090DE8C /* Set.swift */; };
 		43BBFDBB1AC05D580090DE8C /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBFDBA1AC05D580090DE8C /* SetTests.swift */; };
 		43BBFDBC1AC05DCB0090DE8C /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBFDB81AC05B310090DE8C /* Set.swift */; };
-		43C23ACD1AB07C9A004DA244 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C23ACC1AB07C9A004DA244 /* Realm.framework */; };
 		43C23ACF1AB07CAC004DA244 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C23ACE1AB07CAC004DA244 /* libc++.dylib */; };
 		43C23AD11AB07CC3004DA244 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C23AD01AB07CC3004DA244 /* RLMSupport.swift */; };
 		43C23AD31AB07D17004DA244 /* Noise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C23AD21AB07D17004DA244 /* Noise.swift */; };
@@ -50,6 +55,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4364BFF21C47EAAE00ABB55A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4364BFF11C47EAAE00ABB55A /* RealmSwift.framework in Embed Frameworks */,
+				4364BFEF1C47EAAE00ABB55A /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		43032C8E1ABB388800871A1C /* NoiseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseDataSource.swift; path = Models/NoiseDataSource.swift; sourceTree = "<group>"; };
 		43032C911ABB574F00871A1C /* Noisily-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Noisily-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -59,6 +79,8 @@
 		43032C951ABB574F00871A1C /* SAMultisectorControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMultisectorControl.m; sourceTree = "<group>"; };
 		43032C9B1ABB58AF00871A1C /* NoiseLayeringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseLayeringViewController.swift; path = ViewControllers/NoiseLayeringViewController.swift; sourceTree = "<group>"; };
 		4319C3C11ABC9B710075FEC7 /* Whale.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Whale.mp3; sourceTree = "<group>"; };
+		4364BFEA1C47EAA600ABB55A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		4364BFEB1C47EAA600ABB55A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		4368BED91B3A47490048A161 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		4380F97D1AAF826000BBAC40 /* waves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = waves.mp4; sourceTree = "<group>"; };
 		4380F97E1AAF826000BBAC40 /* thunder.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = thunder.mp4; sourceTree = "<group>"; };
@@ -94,9 +116,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4364BFEC1C47EAA600ABB55A /* Realm.framework in Frameworks */,
 				4368BEDA1B3A47490048A161 /* Reveal.framework in Frameworks */,
+				4364BFF01C47EAAE00ABB55A /* RealmSwift.framework in Frameworks */,
+				4364BFED1C47EAA600ABB55A /* RealmSwift.framework in Frameworks */,
 				43C23ACF1AB07CAC004DA244 /* libc++.dylib in Frameworks */,
-				43C23ACD1AB07C9A004DA244 /* Realm.framework in Frameworks */,
+				4364BFEE1C47EAAE00ABB55A /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +221,8 @@
 		43D3D6391AA77B6F00473DD1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4364BFEA1C47EAA600ABB55A /* Realm.framework */,
+				4364BFEB1C47EAA600ABB55A /* RealmSwift.framework */,
 				4368BED91B3A47490048A161 /* Reveal.framework */,
 				43D3D63A1AA77B6F00473DD1 /* Info.plist */,
 			);
@@ -266,6 +293,7 @@
 				43D3D6321AA77B6F00473DD1 /* Sources */,
 				43D3D6331AA77B6F00473DD1 /* Frameworks */,
 				43D3D6341AA77B6F00473DD1 /* Resources */,
+				4364BFF21C47EAAE00ABB55A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,7 +328,9 @@
 		43D3D62E1AA77B6F00473DD1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Appsbyahrens;
 				TargetAttributes = {
 					43D3D6351AA77B6F00473DD1 = {
@@ -441,6 +471,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -516,6 +547,7 @@
 					"-framework",
 					Reveal,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appsbyahrens.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Noisily/Noisily-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -541,6 +573,7 @@
 					"-framework",
 					Reveal,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appsbyahrens.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Noisily/Noisily-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -561,6 +594,7 @@
 				);
 				INFOPLIST_FILE = NoisilyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appsbyahrens.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Noisily.app/Noisily";
 			};
@@ -576,6 +610,7 @@
 				);
 				INFOPLIST_FILE = NoisilyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appsbyahrens.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Noisily.app/Noisily";
 			};

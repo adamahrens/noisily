@@ -9,7 +9,7 @@
 import UIKit
 import Realm
 
-class Noise: RLMObject, Equatable, Hashable {
+class Noise: RLMObject {
     dynamic var name = ""
     dynamic var imageName = ""
     dynamic var fileName = ""
@@ -20,7 +20,7 @@ class Noise: RLMObject, Equatable, Hashable {
     }
     
     func soundFilePath() -> NSURL {
-        return NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(fileName, ofType: fileType)!)!
+        return NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(fileName, ofType: fileType)!)
     }
 }
 

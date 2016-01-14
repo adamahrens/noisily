@@ -54,7 +54,7 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     //MARK: NSTimer Selector
     func changeBackgroundColor() {
         let newBackgroundColor = backgroundRandomizer.randomBackgroundColor()
-        var animation = CABasicAnimation(keyPath: "backgroundColor")
+        let animation = CABasicAnimation(keyPath: "backgroundColor")
         animation.fromValue = self.view.backgroundColor?.CGColor
         animation.toValue = newBackgroundColor.CGColor
         animation.duration = 10

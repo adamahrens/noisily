@@ -14,7 +14,7 @@ class NoisePlayerManager: NSObject, AVAudioPlayerDelegate {
     /**
     Toggles playing the noise. If currently playing turns it off, otherwise on
     
-    :param: noise The Noise to toggle on/off
+    - parameter noise: The Noise to toggle on/off
     */
     func toggleNoise(noise: Noise) {
         let noiseResource = noise.soundFilePath()
@@ -26,7 +26,13 @@ class NoisePlayerManager: NSObject, AVAudioPlayerDelegate {
             players[noise] = nil
         } else {
             // Need to start a new player
-            let player = AVAudioPlayer(contentsOfURL: noiseResource, error: &error)
+            let player: AVAudioPlayer!
+            do {
+                player = try AVAudioPlayer(contentsOfURL: noiseResource)
+            } catch let error1 as NSError {
+                error = error1
+                player = nil
+            }
             player.volume = 0.5
             player.numberOfLoops = -1
             player.delegate = self
@@ -36,7 +42,7 @@ class NoisePlayerManager: NSObject, AVAudioPlayerDelegate {
         }
         
         if (error != nil) {
-           println("Error constructing player \(error)")
+           print("Error constructing player \(error)")
         }
     }
     
@@ -50,8 +56,8 @@ class NoisePlayerManager: NSObject, AVAudioPlayerDelegate {
     /**
     Adjusts the volume level of a noise if it's currently playing
     
-    :param: noise The Noise to adjust
-    :param: volume Volume level between 0.0 and 1.0 (inclusive)
+    - parameter noise: The Noise to adjust
+    - parameter volume: Volume level between 0.0 and 1.0 (inclusive)
     */
     func adjustVolumeLevel(noise: Noise, volume: Double) {
         if let player = players[noise] {

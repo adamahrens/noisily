@@ -83,7 +83,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         realm.addObject(bird)
         realm.addObject(lunch)
         realm.addObject(whale)
-        realm.commitWriteTransaction()
+        do {
+            try realm.commitWriteTransaction()
+        } catch {
+            print("Exception!")
+        }
+        
         
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: key)
     }
