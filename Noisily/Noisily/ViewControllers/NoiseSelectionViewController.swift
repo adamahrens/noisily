@@ -30,7 +30,7 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        timer = NSTimer.scheduledTimerWithTimeInterval(70.0, target: self, selector: "changeBackgroundColor", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(70.0, target: self, selector: #selector(NoiseSelectionViewController.changeBackgroundColor), userInfo: nil, repeats: true)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -82,7 +82,7 @@ class NoiseSelectionViewController: UIViewController, UICollectionViewDelegate, 
             let noise = dataSource.noiseAtIndexPath(indexPath)
             cell.imageView.image = UIImage(named: noise.imageName)
             cell.volumeSlider.value = Float(dataSource.currentVolumeForNoise(noise))
-            cell.volumeSlider.addTarget(self, action: "volumeSliderChanged:", forControlEvents: .ValueChanged)
+            cell.volumeSlider.addTarget(self, action: #selector(NoiseSelectionViewController.volumeSliderChanged(_:)), forControlEvents: .ValueChanged)
             cell.volumeSlider.tag = indexPath.row
             cell.volumeSlider.hidden = !dataSource.noiseIsPlaying(indexPath)
         }
